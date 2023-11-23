@@ -56,6 +56,15 @@ for i in range(200):
     snowflake_y = random.randint(0, screen_height)
     pygame.draw.circle(screen, snowflake_color, (snowflake_x, snowflake_y), snowflake_radius)
 
+# Add a written Christmas wish
+font = pygame.font.Font(None, 36)
+text_color = (128, 0, 0)
+input_name = input("Please enter your name: ")
+text = font.render(f"Merry Christmas, {input_name}!", True, text_color)
+text_rect = text.get_rect()
+text_rect.center = (screen_width // 2, 50)
+screen.blit(text, text_rect)
+
 # Update the display
 pygame.display.update()
 
